@@ -9,12 +9,14 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // define options that Express will use when sending files to the client (using res.sendFile)
 var options = {
-    root: __dirname + "/views",
+    root: ".",
     dotfiles: 'deny'
 };
 
 // make the "public" directory available to the client
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
+app.use(express.static('bower_components'));
+
 
 // Defining routes!
 
@@ -35,11 +37,11 @@ app.get('/kittens', function(req, res){
 });
 
 app.get('/about', function(req, res){
-    res.sendFile('about.html', options);
+    res.sendFile('public/views/about.html', options);
 });
 
 app.get('/petForm', function(req, res){
-    res.sendFile('petForm.html', options);
+    res.sendFile('public/views/petForm.html', options);
     //console.log(req.query["newPet"]);
 });
 
@@ -49,7 +51,7 @@ app.post('/petForm', function(req, res){
 });
 
 app.get('/', function(req, res){
-    res.sendFile('index.html', options);
+    res.sendFile('public/views/index.html', options);
 });
 
 // Wildcard catches requests for non-existent routes or files and responds with a 404 message (or an html page if you want to make a custom one!)

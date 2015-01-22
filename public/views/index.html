@@ -5,14 +5,21 @@
     <title>kittens</title>
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="javascript/clientJavascript.js"></script>
+    <script type="text/javascript" src="javascript/clientJavascript.js"></script>
+    <script type="text/javascript" src="angularjs/angular.js"></script>
+    <script type="text/javascript" src="javascript/main.controller.js"></script>
 </head>
-<body>
+
+<body ng-app="mainApp" ng-controller="mainCtrl">
     <a href="/about">ABOUT</a>
     <a href="/kittens">KITTENS</a>
     <a href="/petForm">Add a new pet!</a>
     <hr>
     <img src="assets/images/puppies.jpg">
     <button class="blockCenter" style="margin-top: 10px" type="button" onclick="sendAlert()">Send an alert!</button>
+    <hr>
+    <ul>
+        <li ng-repeat="test in data">{{test}}</li>
+    </ul>
 </body>
 </html>
