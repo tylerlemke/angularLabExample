@@ -7,12 +7,9 @@ var bodyParser = require("body-parser");
 // Including body-parser. See readme for info.
 app.use(bodyParser.urlencoded({extended: false}));
 
-//require our own javascript
-var tools = require('./serverJavascript.js');
-
 // define options that Express will use when sending files to the client (using res.sendFile)
 var options = {
-    root: __dirname + '/public',
+    root: __dirname + "/views",
     dotfiles: 'deny'
 };
 
