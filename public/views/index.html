@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>kittens</title>
 
+    <!-- Loading Stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
+
+    <!-- Loading Javascript Stuff -->
     <script type="text/javascript" src="javascript/clientJavascript.js"></script>
     <script type="text/javascript" src="angularjs/angular.js"></script>
     <script type="text/javascript" src="javascript/main.controller.js"></script>
@@ -18,8 +22,10 @@
     <img src="assets/images/puppies.jpg">
     <button class="blockCenter" style="margin-top: 10px" type="button" onclick="sendAlert()">Send an alert!</button>
     <hr>
-    <ul>
-        <li ng-repeat="test in data">{{test}}</li>
-    </ul>
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="test in data">{{test}}</li>
+        </ul>
+    </div>
 </body>
 </html>
