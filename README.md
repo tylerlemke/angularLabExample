@@ -3,15 +3,17 @@ Playing with node and express a bit. This setup might be used to teach students 
 
 
 #Setup:
-Run:
+Install dependencies with npm and bower
+> npm is generally used to manage server and development dependencies, whereas bower is generally used to manage client side dependencies
+
 ```
-npm install
+npm install && bower install
 ```
 
 #Running Your Project:
 Run
 ```
-node app.js
+
 ``` 
 in the project directory to serve the project. It should be available on localhost:9000 by default.
 
