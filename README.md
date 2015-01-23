@@ -3,41 +3,43 @@ Playing with node and express a bit. This setup might be used to teach students 
 
 
 #Setup:
-Install dependencies with npm and bower
-> npm is generally used to manage server and development dependencies, whereas bower is generally used to manage client side dependencies
-
+Install dependencies with npm and bower by running:
 ```
 npm install && bower install
 ```
+> npm is generally used to manage server and development dependencies, whereas bower is generally used to manage client side dependencies
 
 #Running Your Project:
-Run
+To serve your project, run:
 ```
-
+grunt serve
 ``` 
-in the project directory to serve the project. It should be available on localhost:9000 by default.
+> Grunt is a task runner that helps automate all that stuff you had to type during the last lab. Right now, ``grunt serve`` is set up to run nodemon, which will automatically
+restart your node server whenever it detects changes to your project.
 
->If you get an error something along the lines of ``command 'node' not found`` try running ``nodejs app.js``
-instead. If neither of these work, you likely don't have node installed.
+Served projects should be available on localhost:9000 by default.
 
-Every time you make changes to your project that you want to see, you will need to restart your node server. This can be accomplished by pressing ``Crtl + C`` in the terminal (the one in which your node server is running) followed by reissuing the ``node app.js`` command.
+>If you get an error something along the lines of ``bash: grunt: command not found`` you probably don't have grunt installed correctly. Please let a professor or DM know about this. 
 
 #Testing Your Project
 
 The ``karma.conf.js`` file should already exist if you cloned the repo correctly.
 To run your tests, run:
 ```
-karma start karma.conf.js
+grunt test
 ```
-> If you get a message along the lines of ``bash: karma: command not found`` you probably don't have karma installed
-correctly. You'll have to run: ``node_modules/karma/bin/karma start karma.conf.js`` instead.
+> If this doesn't work, please let a professor or DM know about it.
 
 ##Resoures
+#####Getting started with grunt:
+http://gruntjs.com/getting-started
+
+#####Tutorial for testing with jasmine
+http://jasmine.github.io/2.0/introduction.html
+
 #####Handling POST requests in Express:
 http://codeforgeek.com/2014/09/handle-get-post-request-express-4/
 
 #####Security concerns for handling POST requests in Express:
 https://groups.google.com/forum/#!topic/express-js/iP2VyhkypHo
 
-#####Tutorial for testing with jasmine
-http://jasmine.github.io/2.0/introduction.html
