@@ -15,9 +15,13 @@
 </head>
 
 <body ng-app="mainApp" ng-controller="mainCtrl">
-    <a href="/about">ABOUT</a>
-    <a href="/kittens">KITTENS</a>
-    <a href="/petForm">Add a new pet!</a>
+
+    <div id="navBar">
+        <ul class="nav nav-pills">
+            <li role="presentation" ng-repeat="item in pages track by $index"><a href="{{item.link}}">{{item.text}}</a></li>
+        </ul>
+    </div>
+
     <hr>
     <img src="assets/images/puppies.jpg">
     <button class="blockCenter" style="margin-top: 10px" type="button" onclick="sendAlert()">Send an alert!</button>
