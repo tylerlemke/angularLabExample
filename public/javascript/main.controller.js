@@ -6,7 +6,8 @@ angular.module("mainApp", [])
            test1: "test1",
            test2: "kittens",
            test3: "test3",
-           test4: "hello world"
+           test4: "hello world",
+           test5: "This uses Grunt!!!"
        };
 
        $scope.cat = function(str1, str2){
