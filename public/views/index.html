@@ -28,7 +28,12 @@
     <hr>
     <div class="container">
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="test in data">{{test}}</li>
+            <li class="list-group-item">
+                <input ng-model="textField" type="text" size="50" placeholder="add a new item to the list!">
+                <button class="btn btn-primary" type="button" ng-click="addData()">Add</button>
+                <span class="floatRight">Items in this list: {{itemsInList()}}</span>
+            </li>
+            <li class="list-group-item" ng-repeat="test in data">{{test.text}}<span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="removeData($index)"></span></li>
         </ul>
     </div>
 </body>
