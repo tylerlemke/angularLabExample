@@ -23,7 +23,6 @@ Served projects should be available on localhost:9000 by default.
 
 #Testing Your Project
 
-The ``karma.conf.js`` file should already exist if you cloned the repo correctly.
 To run your tests, run:
 ```
 grunt test
