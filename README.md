@@ -30,6 +30,9 @@ grunt test
 > If this doesn't work, please let a professor or DM know about it.
 
 ##Resoures
+#####Bootstrap Components:
+http://getbootstrap.com/components/
+
 #####Getting started with grunt:
 http://gruntjs.com/getting-started
 
