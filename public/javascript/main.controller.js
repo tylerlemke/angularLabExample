@@ -1,5 +1,6 @@
 var mainApp = angular.module("mainApp", []);
 
+//====================== NAVBAR CONTROLLER ============================
     mainApp.controller('navbarCtrl', function($scope){
         console.log("controller loaded!");
 
@@ -7,12 +8,14 @@ var mainApp = angular.module("mainApp", []);
 
         $scope.pages = [
             {text: "Home", link: '/'},
+            {text: "About", link: '/about'},
             {text: "Kittens", link: '/kittens'},
             {text: "Pet Form", link: '/petForm'},
             {text: "404 Page", link: '/wefwrtbertbeb'}
         ];
     });
 
+//==================== MAIN CONTROLLER ==================================
     mainApp.controller('mainCtrl', function($scope){
        console.log("controller loaded!");
 
