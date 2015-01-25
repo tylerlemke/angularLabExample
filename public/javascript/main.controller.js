@@ -1,16 +1,24 @@
-angular.module("mainApp", [])
-    .controller('mainCtrl', function($scope){
+var mainApp = angular.module("mainApp", []);
+
+    mainApp.controller('navbarCtrl', function($scope){
+        console.log("controller loaded!");
+
+        $scope.textField = "";
+
+        $scope.pages = [
+            {text: "Home", link: '/'},
+            {text: "Kittens", link: '/kittens'},
+            {text: "Pet Form", link: '/petForm'},
+            {text: "404 Page", link: '/wefwrtbertbeb'}
+        ];
+    });
+
+    mainApp.controller('mainCtrl', function($scope){
        console.log("controller loaded!");
 
        $scope.textField = "";
 
-       $scope.pages = [
-           {text: "Home", link: '/'},
-           {text: "Kittens", link: '/kittens'},
-           {text: "Pet Form", link: '/petForm'},
-           {text: "404 Page", link: '/wefwrtbertbeb'}
-       ];
-
+       // Normally, data like this would be stored in a database, and this controller would issue an http:get request for it.
        $scope.data = [
            {text: "test1"},
            {text: "kittens"},
@@ -20,8 +28,10 @@ angular.module("mainApp", [])
        ];
 
        $scope.addData = function(){
-           $scope.data.push({text: $scope.textField});
-           $scope.textField = "";
+           if($scope.textField.length >= 1) {
+               $scope.data.push({text: $scope.textField});
+               $scope.textField = "";
+           }
        };
 
        $scope.removeData = function(index){
