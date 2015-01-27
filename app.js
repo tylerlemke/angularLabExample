@@ -44,11 +44,16 @@ app.get('/', function(req, res){
     res.sendFile('public/views/index.html', options);
 });
 
+app.get('/ferret', function(req, res){
+    res.sendFile('public/views/ferret.html', options);
+});
+
 // Wildcard catches requests for non-existent routes or files and responds with a 404 message (or an html page if you want to make a custom one!)
 app.get('*', function(req, res){
     //res.send("404");
     res.sendFile('public/views/404.html', options);
 });
+
 
 // Starts the nodejs server on port 9000
 var server = app.listen(9000, function(){
