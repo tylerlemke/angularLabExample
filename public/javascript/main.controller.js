@@ -4,13 +4,10 @@ var mainApp = angular.module("mainApp", []);
     mainApp.controller('navbarCtrl', function($scope){
         console.log("controller loaded!");
 
-        $scope.textField = "";
-
         $scope.pages = [
             {text: "Home", link: '/'},
             {text: "About", link: '/about'},
             {text: "Kittens", link: '/kittens'},
-            {text: "Pet Form", link: '/petForm'},
             {text: "404 Page", link: '/wefwrtbertbeb'}
         ];
     });

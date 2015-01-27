@@ -40,16 +40,6 @@ app.get('/about', function(req, res){
     res.sendFile('public/views/about.html', options);
 });
 
-app.get('/petForm', function(req, res){
-    res.sendFile('public/views/petForm.html', options);
-    //console.log(req.query["newPet"]);
-});
-
-app.post('/petForm', function(req, res){
-    res.send(req.body.newPet + " String Length: " + tools.stringLength(req.body.newPet));
-    console.log(req.body.newPet);
-});
-
 app.get('/', function(req, res){
     res.sendFile('public/views/index.html', options);
 });
