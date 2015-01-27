@@ -29,6 +29,8 @@ grunt test
 ```
 > If this doesn't work, please let a professor or DM know about it.
 
+You can also run your tests through the webstorm karma run configuration (right click karma.conf.js, etc.)
+
 ##Resoures
 #####Bootstrap Components:
 http://getbootstrap.com/components/
