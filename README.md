@@ -1,4 +1,4 @@
-# nodeLabExample
+# angularLabExample
 Playing with Node, Express and Angular.
 
 
@@ -41,9 +41,5 @@ http://gruntjs.com/getting-started
 #####Tutorial for testing with jasmine
 http://jasmine.github.io/2.0/introduction.html
 
-#####Handling POST requests in Express:
-http://codeforgeek.com/2014/09/handle-get-post-request-express-4/
 
-#####Security concerns for handling POST requests in Express:
-https://groups.google.com/forum/#!topic/express-js/iP2VyhkypHo
 
