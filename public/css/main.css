@@ -26,4 +26,6 @@ img {
 
 .centerText {
     text-align: center;
+    font-size: 20px;
+    color: mediumblue;
 }
