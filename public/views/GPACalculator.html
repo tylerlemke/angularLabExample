@@ -15,29 +15,49 @@
 
 <div ng-include="'views/navbar.html'"></div>
 
-<form method=post action="/GPACalculator">
-    <table style="width:75%" align="center">
-       <tr>
-           <th>Course Name</th>
-           <th>Credits</th>
-           <th>Grade</th>
-       </tr>
-        <tr>
-            <td><input name="courseName1" type="text" width="20" placeholder="enter new course"></td>
-            <td><input name="credits1" type="number" width="20" placeholder="enter course credits"></td>
-            <td><input name="grade1" type="text" width="20" placeholder="enter course grade"></td>
-        </tr>
-        <tr>
-            <td><input name="courseName2" type="text" width="20" placeholder="enter new course"></td>
-            <td><input name="credits2" type="number" width="20" placeholder="enter course credits"></td>
-            <td><input name="grade2" type="text" width="20" placeholder="enter course grade"></td>
-        </tr>
-        <tr>
-            <td><input name="courseName3" type="text" width="20" placeholder="enter new course"></td>
-            <td><input name="credits3" type="number" width="20" placeholder="enter course credits"></td>
-            <td><input name="grade3" type="text" width="20" placeholder="enter course grade"></td>
-        </tr>
-    </table>
+
+<form ng-submit="addToTrans()">
+    <input type="text" name="courseName" ng-model="transcript.courseName"> Course Name <br/>
+    <input type="text" name="courseCredits"  ng-model="transcript.courseCredits"> Course Credits <br/>
+    <input type="text" name="courseGrade"  ng-model="transcript.courseGrade"> Course Grade <br/>
 </form>
+
+
+
+
+
+
+
+
+<!--<form method=post action="/GPACalculator">-->
+    <!--<table style="width:75%" align="center">-->
+       <!--<tr>-->
+           <!--<th>Course Name</th>-->
+           <!--<th>Credits</th>-->
+           <!--<th>Grade</th>-->
+       <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><input name="courseName1" type="text" width="20" placeholder="enter new course"></td>-->
+            <!--<td><input name="credits1" type="number" width="20" placeholder="enter course credits"></td>-->
+            <!--<td><input name="grade1" type="text" width="20" placeholder="enter course grade"></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><input name="courseName2" type="text" width="20" placeholder="enter new course"></td>-->
+            <!--<td><input name="credits2" type="number" width="20" placeholder="enter course credits"></td>-->
+            <!--<td><input name="grade2" type="text" width="20" placeholder="enter course grade"></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><input name="courseName3" type="text" width="20" placeholder="enter new course"></td>-->
+            <!--<td><input name="credits3" type="number" width="20" placeholder="enter course credits"></td>-->
+            <!--<td><input name="grade3" type="text" width="20" placeholder="enter course grade"></td>-->
+        <!--</tr>-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<tr>-->
+        <!--<input type="submit" action="Calculate GPA!" align="center">-->
+        <!--</tr>-->
+    <!--</table>-->
+
+<!--</form>-->
 </body>
 </html>

@@ -30,12 +30,20 @@ var mainApp = angular.module("mainApp", []);
            {text: "ferret"}
        ];
 
+//       $scope.transcript = [
+//           {'credits': {{}}}
+//       ];
+
        $scope.addData = function(){
            if($scope.textField.length >= 1) {
                $scope.data.push({text: $scope.textField});
                $scope.textField = "";
            }
        };
+
+//       $scope.addToTrans = function(){
+//           ()
+//       }
 
        $scope.removeData = function(index){
            $scope.data.splice(index, 1);
