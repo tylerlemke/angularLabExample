@@ -63,4 +63,12 @@ describe('Testing controller: navbarCtrl', function(){
     it('should contain pages', function(){
       expect(scope.pages.length > 0).toEqual(true);
     });
+
+    it('should return grade points', function(){
+        expect(scope.transcript.GPACalcHelper(2,A)).toEqual(8);
+    });
+
+    it('should return a number', function(){
+        expect(scope.transcript.)
+    })
 });

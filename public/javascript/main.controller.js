@@ -48,4 +48,16 @@ var mainApp = angular.module("mainApp", []);
        $scope.itemsInList = function(){
            return $scope.data.length;
        };
+
+       $scope.GPACalcHelper = function(credits, grade){
+
+       };
+
+       $scope.GradeNumber = function(grade){
+
+       };
+
+       $scope.TotalGPA = function(cred, grade, cred2, grade2, cred3, grade3){
+
+       }
     });
