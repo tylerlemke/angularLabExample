@@ -9,7 +9,8 @@ var mainApp = angular.module("mainApp", []);
             {text: "About", link: '/about'},
             {text: "Kittens", link: '/kittens'},
             {text: "404 Page", link: '/wefwrtbertbeb'},
-            {text: "Ferrets", link: '/ferret'}
+            {text: "Ferrets", link: '/ferret'},
+            {text: "GPA Calculator", link: '/GPACalculator'}
         ];
     });
 
