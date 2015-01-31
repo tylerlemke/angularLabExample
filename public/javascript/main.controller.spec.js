@@ -41,7 +41,7 @@ describe('Testing controller: mainCtrl', function(){
 });
 
 //=== Testing navbarCtrl ===========================================
-describe('Testing controller: navbarCtrl', function(){
+describe('Testing controller: navbarCtrl', function() {
 
     // load the controller's module
     beforeEach(module('mainApp'));
@@ -49,26 +49,43 @@ describe('Testing controller: navbarCtrl', function(){
     var mainCtrl, scope;
 
     // Initialize the controller and mock scope.
-    beforeEach(inject(function($controller, $rootScope) {
+    beforeEach(inject(function ($controller, $rootScope) {
         scope = $rootScope.$new();
         mainCtrl = $controller('navbarCtrl', {
             $scope: scope
         });
     }));
 
-    it('dummy test should pass', function(){
+    it('dummy test should pass', function () {
         expect(true).toEqual(true);
     });
 
-    it('should contain pages', function(){
-      expect(scope.pages.length > 0).toEqual(true);
+    it('should contain pages', function () {
+        expect(scope.pages.length > 0).toEqual(true);
     });
-
-    it('should return grade points', function(){
-        expect(scope.transcript.GPACalcHelper(2,A)).toEqual(8);
-    });
-
-    it('should return a number', function(){
-        expect(scope.transcript.)
-    })
 });
+
+//=== Testing GPActrl ===========================================
+    describe('Testing controller: GPActrl', function () {
+
+        // load the controller's module
+        beforeEach(module('mainApp'));
+
+        var GPActrl, scope;
+
+        // Initialize the controller and mock scope.
+        beforeEach(inject(function ($controller, $rootScope) {
+            scope = $rootScope.$new();
+            GPActrl = $controller('GPActrl', {
+                $scope: scope
+            });
+        }));
+
+        it('should return a number', function () {
+            expect(scope.GradeNumber("A")).toEqual(4);
+        })
+
+        it('should return correct GPA', function () {
+            expect(scope.transcript.TotalGPA()).toEqual(4);
+        })
+    });

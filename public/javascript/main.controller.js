@@ -30,9 +30,7 @@ var mainApp = angular.module("mainApp", []);
            {text: "ferret"}
        ];
 
-//       $scope.transcript = [
-//           {'credits': {{}}}
-//       ];
+
 
        $scope.addData = function(){
            if($scope.textField.length >= 1) {
@@ -41,9 +39,6 @@ var mainApp = angular.module("mainApp", []);
            }
        };
 
-//       $scope.addToTrans = function(){
-//           ()
-//       }
 
        $scope.removeData = function(index){
            $scope.data.splice(index, 1);
@@ -57,15 +52,55 @@ var mainApp = angular.module("mainApp", []);
            return $scope.data.length;
        };
 
-       $scope.GPACalcHelper = function(credits, grade){
 
-       };
-
-       $scope.GradeNumber = function(grade){
-
-       };
-
-       $scope.TotalGPA = function(cred, grade, cred2, grade2, cred3, grade3){
-
-       }
     });
+
+
+mainApp.controller('GPActrl', function($scope) {
+    console.log("controller loaded!");
+
+    $scope.transcript = [
+        {credits: 4, grade: 'a'}
+    ];
+
+    $scope.addData = function(){
+        if($scope.textField.length >= 1) {
+            $scope.transcript.push({text: $scope.textField});
+            $scope.textField = "";
+        }
+    };
+
+
+    $scope.GradeNumber = function(grade){
+        if(grade == "A" || grade == 'a'){
+            return 4;
+        }
+        else if(grade == "B" || grade == 'b'){
+            return 3;
+        }
+        else if(grade == "C" || grade == 'c'){
+            return 2;
+        }
+        else if(grade == "D" || grade == 'd'){
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    };
+
+    $scope.TotalGPA = function(){
+        var GPA = 0;
+        var numerator = 0;
+        var tempGrade = 0;
+        var denominator = 0;
+        for (i=0; i <= $scope.transcript.length; i++){
+            tempGrade = ($scope.transcript[i].grade = $scope.GradeNumber($scope.transcript[i].grade));
+            numerator = numerator + (tempGrade * $scope.transcript[i].credits);
+            denominator = (denominator + $scope.transcript[i].credits);
+        }
+        GPA = (numerator / denominator);
+        return GPA;
+    }
+
+});
