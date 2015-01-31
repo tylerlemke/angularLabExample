@@ -59,14 +59,23 @@ var mainApp = angular.module("mainApp", []);
 mainApp.controller('GPActrl', function($scope) {
     console.log("controller loaded!");
 
+    $scope.NAME = "";
+    $scope.CREDITS = "";
+    $scope.GRADE = "";
+
+
+
+
     $scope.transcript = [
-        {credits: 4, grade: 'a'}
+        {name: 'blah', credits: 4, grade: 'a'}
     ];
 
-    $scope.addData = function(){
-        if($scope.textField.length >= 1) {
-            $scope.transcript.push({text: $scope.textField});
-            $scope.textField = "";
+    $scope.addToTranscript = function(){
+        if($scope.NAME.length >= 1 && $scope.CREDITS.length >= 1 && $scope.GRADE.length >= 1) {
+            $scope.transcript.push({name: $scope.NAME, credits: $scope.CREDITS, grade: $scope.GRADE});
+            $scope.NAME = "";
+            $scope.CREDITS = "";
+            $scope.GRADE = "";
         }
     };
 
@@ -89,13 +98,12 @@ mainApp.controller('GPActrl', function($scope) {
         }
     };
 
-    $scope.TotalGPA = function(){
+    $scope.transcript.TotalGPA = function(){
         var GPA = 0;
         var numerator = 0;
-        var tempGrade = 0;
         var denominator = 0;
-        for (i=0; i <= $scope.transcript.length; i++){
-            tempGrade = ($scope.transcript[i].grade = $scope.GradeNumber($scope.transcript[i].grade));
+        for (i=0; i < $scope.transcript.length; i++){
+            tempGrade = $scope.GradeNumber($scope.transcript[i].grade);
             numerator = numerator + (tempGrade * $scope.transcript[i].credits);
             denominator = (denominator + $scope.transcript[i].credits);
         }
