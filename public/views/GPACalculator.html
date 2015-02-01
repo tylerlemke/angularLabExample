@@ -11,19 +11,19 @@
     <script type="text/javascript" src="angularjs/angular.js"></script>
     <script type="text/javascript" src="javascript/main.controller.js"></script>
 </head>
+
 <body ng-app="mainApp" ng-controller="GPActrl">
 
 <div ng-include="'views/navbar.html'"></div>
 
 
 <form ng-submit="addToTranscript()">
-    <input type="text" name="courseName" ng-model="NAME"> Course Name <br/>
-    <input type="number" name="credits"  ng-model="CREDITS"> Course Credits <br/>
-    <input type="text" name="grade"  ng-model="GRADE"> Course Grade <br/>
+    <input ng-model="input.NAME" type="text" name="courseName"> Course Name <br/>
+    <input ng-model="input.CREDITS" type="number" name="credits"> Course Credits <br/>
+    <input ng-model="input.GRADE" type="text" name="grade"> Course Grade <br/>
     <input type="submit" value="submit" class="btn btn-primary">
-    <span class="floatCenter">Total GPA:  <span class = GPAColor>{{transcript.TotalGPA()}}</span></span>
+    <span ng-style="GPAColor()" class="floatCenter">Total GPA:{{TotalGPA()}}</span>
 </form>
 
 
 </body>
-</html>
