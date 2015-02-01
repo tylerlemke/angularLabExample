@@ -55,37 +55,46 @@ var mainApp = angular.module("mainApp", []);
 
     });
 
-
+//==================== GPA CONTROLLER ==================================
 mainApp.controller('GPActrl', function($scope) {
     console.log("controller loaded!");
 
     $scope.input = {NAME:"", CREDITS:"", GRADE:""};
-    $scope.transcript = [
-    ];
+    $scope.transcript = [];
 
 
 
     $scope.addToTranscript = function(){
+        if($scope.input.GRADE != "A" &&
+            $scope.input.GRADE != "a" &&
+            $scope.input.GRADE != "B" &&
+            $scope.input.GRADE != "b" &&
+            $scope.input.GRADE != "C" &&
+            $scope.input.GRADE != "c" &&
+            $scope.input.GRADE != "D" &&
+            $scope.input.GRADE != "d" &&
+            $scope.input.GRADE != "F" &&
+            $scope.input.GRADE != "f" )
+            {
+                alert("INVALID GRADE ENTRY");
+                return;
+            }
+        if($scope.input.CREDITS > 0 && $scope.input.CREDITS <= 6) {
 
-        if($scope.input.NAME.length >= 1 && $scope.input.CREDITS.length >= 1 && $scope.input.GRADE.length >= 1) {
-            $scope.transcript.push({class:$scope.input.NAME, credits: $scope.input.CREDITS, grade: $scope.input.GRADE} );
-            $scope.textFields = {
-                NAME:"",
-                CREDITS:"",
-                GRADE:""
-            };
+            if ($scope.input.NAME.length >= 1 && $scope.input.CREDITS.length >= 1 && $scope.input.GRADE.length >= 1) {
+                $scope.transcript.push({class: $scope.input.NAME, credits: $scope.input.CREDITS, grade: $scope.input.GRADE});
+                $scope.input = {
+                    NAME: "",
+                    CREDITS: "",
+                    GRADE: ""
+                };
+            }
+        }
+        else{
+            alert("INVALID CREDIT ENTRY");
+            return;
         }
     };
-
-
-//    $scope.addToTranscript = function(){
-//        if($scope.input.NAME.length >= 1 && $scope.input.CREDITS.length >= 1 && $scope.input.GRADE.length >= 1) {
-//            $scope.transcript.push({name: $scope.input.NAME, credits: $scope.input.CREDITS, grade: $scope.input.GRADE});
-//            $scope.input = {
-//                NAME:"", CREDITS:"",GRADE:""
-//            };
-//        }
-//    };
 
 
     var GradeNumber = function(grade){
@@ -104,10 +113,6 @@ mainApp.controller('GPActrl', function($scope) {
         else if (grade == "F" || grade == 'f'){
             return 0;
         }
-        else{
-            alert("INVALID GRADE ENTRY");
-            return;
-        }
     };
 
     $scope.TotalGPA = function(){
@@ -117,7 +122,7 @@ mainApp.controller('GPActrl', function($scope) {
         for (i=0; i < $scope.transcript.length; i++){
             tempGrade = GradeNumber($scope.transcript[i].grade);
             numerator = numerator + (tempGrade * $scope.transcript[i].credits);
-            denominator = (denominator + $scope.transcript[i].credits);
+            denominator = (denominator + parseInt($scope.transcript[i].credits));
         }
         GPA = (numerator / denominator);
 
@@ -130,7 +135,7 @@ mainApp.controller('GPActrl', function($scope) {
     }
 
     $scope.GPAColor = function(){
-        var GPA = $scope.transcript.TotalGPA();
+        var GPA = $scope.TotalGPA();
         if(GPA >= 3 ){
             return {"color":"Green"}
 

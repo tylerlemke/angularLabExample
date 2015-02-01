@@ -19,7 +19,7 @@
 
 <form ng-submit="addToTranscript()">
     <input ng-model="input.NAME" type="text" name="courseName"> Course Name <br/>
-    <input ng-model="input.CREDITS" type="number" name="credits"> Course Credits <br/>
+    <input ng-model="input.CREDITS" type="text" name="credits"> Course Credits <br/>
     <input ng-model="input.GRADE" type="text" name="grade"> Course Grade <br/>
     <input type="submit" value="submit" class="btn btn-primary">
     <span ng-style="GPAColor()" class="floatCenter">Total GPA:{{TotalGPA()}}</span>
